@@ -22,3 +22,19 @@ a {
 a:hover {
   color: #ffbe6a;
 }
+
+button {
+  background-color: transparent;
+  border: 1px solid ghostwhite;
+  color: ghostwhite;
+  font-size: 8pt;
+  border-radius: 10px;
+}
+
+button > p {
+  color: ghostwhite;
+  font-size: 12pt;
+  margin: 0;
+  padding: 15px;
+  padding: 15px;
+}

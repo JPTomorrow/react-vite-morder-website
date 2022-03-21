@@ -1,0 +1,15 @@
+body {
+  background-color: rgb(0, 59, 91);
+}
+
+.counter {
+  margin-top: 20px;
+}
+
+.content-wrapper {
+  width: 80%;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,26 +1,18 @@
-import { useState } from "react";
-import logo from "@/logo.svg";
 import "@/App.css";
-
 import { Outlet, Link } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0);
+import ParticlesBg from "particles-bg";
 
+export default function App() {
   return (
     <div>
-      <h1>Morder Industries!</h1>
-      <nav
-        style={{
-          borderBottom: "solid 1px",
-          paddingBottom: "1rem",
-        }}
-      >
+      <span>
+        <h1>Morder Industries!</h1>
         <Link to="/test_page">TestPage</Link>
-      </nav>
+      </span>
+
       <Outlet />
+      <ParticlesBg num={70} type="cobweb" color="#ffffff" bg={true} />
     </div>
   );
 }
-
-export default App;

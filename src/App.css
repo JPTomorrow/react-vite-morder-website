@@ -37,10 +37,6 @@
   }
 }
 
-button {
-  font-size: calc(10px + 2vmin);
-}
-
 .particles-bg-canvas-self {
   background: rgb(100, 133, 255);
   background: linear-gradient(

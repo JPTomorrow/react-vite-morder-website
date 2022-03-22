@@ -1,13 +1,13 @@
 import styles from "@/pages/HomePage.module.css";
-import AnimatedContentContainer from "@/components/AnimatedContentContainer";
-import Button from "@/components/Button";
+import NewsEntry from "@/components/NewsEntry";
 
 export default function HomePage() {
   return (
     <div className={styles["content-wrapper"]}>
-      <AnimatedContentContainer>
-        {/* <Button>Test</Button> */}
-      </AnimatedContentContainer>
+      <NewsEntry>
+        <h1>Title</h1>
+        <p>Content</p>
+      </NewsEntry>
     </div>
   );
 }

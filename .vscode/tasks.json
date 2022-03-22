@@ -1,12 +1,31 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "npm",
-			"script": "dev",
-			"problemMatcher": [],
-			"label": "npm: dev",
-			"detail": "vite"
-		}
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "dev",
+      "problemMatcher": [],
+      "label": "serve"
+    },
+    {
+      "type": "shell",
+      "command": "scp -r ./dist/* root@31.220.17.56:/var/www/morderindustries.com/public",
+      "label": "scp: deploy to server"
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "problemMatcher": [],
+      "label": "build"
+    },
+    {
+      "label": "publish to morderindustries.com",
+      "dependsOn": ["build", "scp: deploy to server"],
+      "dependsOrder": "sequence",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
 }

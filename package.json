@@ -8,6 +8,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mantine/core": "^4.0.7",
+    "@mantine/hooks": "^4.0.7",
+    "@mantine/next": "^4.0.7",
     "framer-motion": "^6.2.8",
     "particles-bg": "^2.5.5",
     "react": "^17.0.2",

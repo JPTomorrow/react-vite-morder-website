@@ -1,16 +1,70 @@
-import "@/components/Button.module.css";
-import { Button as MantineButton } from "@mantine/core";
+import styles from "@/components/Button.module.css";
+import { motion } from "framer-motion";
 
-export default function Button({ uppercase, children, className }) {
+const containerVariants = {
+  yOffsetSelf: {
+    translateY: [0, -2],
+    transition: {
+      duration: 0.1,
+    },
+  },
+  yOffsetSelfReset: {
+    translateY: [0, 0],
+    transition: {
+      duration: 0.05,
+    },
+  },
+};
+const backgroundVariants = {
+  initial: {
+    scaleX: 0,
+  },
+  enter: {
+    scaleX: 1,
+    transition: { duration: 0.5, type: "tween", ease: "easeOut" },
+  },
+  exit: {
+    scaleX: 0,
+    transition: { duration: 0.5, type: "tween", ease: "easeOut" },
+  },
+  pushBgToBack: {
+    zIndex: 1,
+  },
+};
+
+const txtVariants = {
+  changeColor: {
+    color: "rgba(255, 255, 255, 1)",
+  },
+  bringTextToFront: {
+    zIndex: 9999,
+  },
+};
+
+export default function Button({ onClick, uppercase, children, className }) {
   return (
-    <MantineButton
-      className={className}
-      variant="outline"
-      compact
-      color="violet"
-      uppercase={uppercase}
+    <motion.button
+      whileHover={[
+        "enter",
+        "bringTextToFront",
+        "pushBgToBack",
+        "changeColor",
+        "yOffsetSelf",
+      ]}
+      whileTap="yOffsetSelfReset"
+      initial="initial"
+      exit="exit"
+      className={styles["container"]}
+      variants={containerVariants}
+      onClick={onClick}
     >
-      {children}
-    </MantineButton>
+      <motion.p variants={txtVariants} className={styles["text"]}>
+        {uppercase ? children.toUpperCase() : children}
+      </motion.p>
+      <motion.div className={styles["bg-anim"]} variants={backgroundVariants}>
+        <p className={styles["spacer"]}>&nbsp;</p>
+      </motion.div>
+      <div className={styles["corner-square"]} />
+    </motion.button>
   );
 }

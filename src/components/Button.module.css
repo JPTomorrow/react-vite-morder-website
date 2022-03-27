@@ -1,24 +1,56 @@
-/* button {
+.container {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+  border: 1px solid rgb(0, 127, 162);
+  border-radius: 1px;
+  background-color: transparent;
+  position: relative;
+  font-size: 12pt;
+}
+
+.bg-anim {
+  background-color: rgb(0, 127, 162);
+  margin: 0;
+  padding: 0;
+  border: none;
+  transform-origin: 0% 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.spacer {
+  margin: 0;
+  padding: 5px;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.text-container {
   margin: 0;
   padding: 0;
   background-color: transparent;
-  border: 1px solid ghostwhite;
-  color: ghostwhite;
-  border-radius: 5px;
-  transition: all 0.1s ease-in-out;
 }
 
-button > p {
-  color: ghostwhite;
-  font-size: 10pt;
+.text {
+  color: rgba(0, 127, 162, 1);
   margin: 0;
   padding: 5px;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  position: relative;
+  transition: color 0.1s ease-out;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
 }
 
-button:hover {
-  background-color: ghostwhite;
+.corner-square {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 5px;
+  background: linear-gradient(45deg, transparent 50%, rgb(0, 127, 162) 50%);
 }
-
-button:hover > p {
-  color: #000;
-} */

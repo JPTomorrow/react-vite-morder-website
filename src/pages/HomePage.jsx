@@ -6,7 +6,7 @@ import SearchBar from "@/components/SearchBar";
 export default function HomePage() {
   return (
     <div className={styles["content-wrapper"]}>
-      <SearchBar />
+      <SearchBar className={styles["search-bar"]} />
       <NewsEntry
         header="Title"
         content="Content"

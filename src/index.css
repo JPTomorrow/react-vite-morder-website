@@ -9,13 +9,3 @@ body {
 p {
   font-family: "Montserrat", sans-serif;
 }
-
-a {
-  color: ghostwhite;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #ffbe6a;
-}
-`

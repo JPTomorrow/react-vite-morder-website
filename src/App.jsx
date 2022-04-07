@@ -1,16 +1,17 @@
 import "@/App.css";
-import style from "@/App.module.css";
+import styles from "@/App.module.css";
 import { Outlet, Link } from "react-router-dom";
+import NavLink from "@/components/NavLink";
 
 import ParticlesBg from "particles-bg";
 
 export default function App() {
   return (
     <>
-      <div className={style["nav-link-container"]}>
-        <Link className={style["nav-link"]} to="/test_page">
+      <div className={styles["nav-link-container"]}>
+        <NavLink className={styles["nav-link"]} to="/test_page">
           Test Page
-        </Link>
+        </NavLink>
       </div>
       <Outlet />
       <ParticlesBg num={70} type="cobweb" color="#ffffff" bg={true} />

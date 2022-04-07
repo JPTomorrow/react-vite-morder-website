@@ -15,6 +15,7 @@ const containerVariants = {
     },
   },
 };
+
 const backgroundVariants = {
   initial: {
     scaleX: 0,

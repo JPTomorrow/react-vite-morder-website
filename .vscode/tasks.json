@@ -2,29 +2,40 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "serve",
+      "label": "serve website on localhost",
       "type": "npm",
       "script": "dev",
+      "options": {
+        "cwd": "./client"
+      },
       "problemMatcher": []
     },
     {
       "type": "shell",
-      "command": "scp -r ./dist/* root@31.220.17.56:/var/www/morderindustries.com/public",
-      "label": "scp: deploy to server"
+      "command": "scp -r ./client/dist/* root@31.220.17.56:/var/www/morderindustries.com/public",
+      "label": "scp: deploy website to server"
     },
     {
       "type": "npm",
       "script": "build",
       "problemMatcher": [],
-      "label": "build"
+      "label": "build website"
     },
     {
-      "label": "publish to morderindustries.com",
-      "dependsOn": ["build", "scp: deploy to server"],
+      "label": "publish website to morderindustries.com",
+      "dependsOn": ["build website", "scp: deploy website to server"],
       "dependsOrder": "sequence",
       "group": {
         "kind": "build",
         "isDefault": true
+      }
+    },
+    {
+      "label": "serve database (testing)",
+      "type": "shell",
+      "command": "npm run devStart",
+      "options": {
+        "cwd": "./server"
       }
     }
   ]

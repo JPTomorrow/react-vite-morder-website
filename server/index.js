@@ -27,6 +27,7 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// INSERT API KEY 
 app.post("/api/keys/insert", (req, res) => {
   const name = req.body.name;
   const key = req.body.key;

@@ -1,12 +1,23 @@
 .container {
   margin-left: auto;
   margin-right: auto;
-  height: auto;
-  background-color: rgba(29, 0, 16, 0.8);
-  border-radius: 5px;
   padding: 20px;
-  margin-top: 20px;
-  border: 1px solid rgb(46, 0, 46);
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  height: auto;
+  padding-top: 10px;
+}
+
+.header {
+  font-size: 16pt;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  padding-right: 5%;
+  width: auto;
+  display: inline-block;
+}
+
+.content {
+  font-size: 12pt;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }

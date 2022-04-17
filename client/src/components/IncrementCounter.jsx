@@ -2,7 +2,7 @@ import styles from "@/components/IncrementCounter.module.css";
 import { useState, Fragment } from "react";
 import { motion } from "framer-motion";
 
-export default function IncrementCounter({ className }) {
+function IncrementCounter({ className }) {
   const [count, setCount] = useState(0);
   const [rotation, setRotation] = useState(45);
 
@@ -33,3 +33,5 @@ export default function IncrementCounter({ className }) {
     </Fragment>
   );
 }
+
+export default IncrementCounter;

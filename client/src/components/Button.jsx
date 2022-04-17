@@ -42,7 +42,7 @@ const txtVariants = {
   },
 };
 
-export default function Button({ onClick, uppercase, children, className }) {
+function Button({ onClick, uppercase, children, className }) {
   return (
     <motion.button
       whileHover={[
@@ -69,3 +69,5 @@ export default function Button({ onClick, uppercase, children, className }) {
     </motion.button>
   );
 }
+
+export default Button;

@@ -2,14 +2,11 @@ import styles from "@/components/SearchBar.module.css";
 import { TextInput } from "@mantine/core";
 import { FaSearch } from "react-icons/fa";
 
-export default function SearchBar({
-  onChange,
-  label,
-  className,
-  error,
-  placeholder,
-}) {
-  //const [value, setValue] = useState("");
+function SearchBar({ onChange, label, className, error, placeholder }) {
+  const search = (event) => {
+    onChange(event.target.value);
+  };
+
   return (
     <>
       <TextInput
@@ -19,8 +16,10 @@ export default function SearchBar({
         radius="md"
         error={error}
         label={label}
-        onChange={onChange}
+        onChange={search}
       />
     </>
   );
 }
+
+export default SearchBar;

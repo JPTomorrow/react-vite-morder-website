@@ -1,13 +1,20 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   mode: "jit",
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "homepage-bg-1": 'url("@/assets/homepage-bg-1.jpg")',
+      },
+    },
     fontFamily: {
       sans: ["Montserrat", "sans-serif"],
     },
     colors: {
-      gray: "ghostwhite",
+      transparent: "transparent",
+      gray: colors.gray,
       white: "ghostwhite",
     },
   },

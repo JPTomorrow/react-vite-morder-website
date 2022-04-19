@@ -6,4 +6,11 @@
   .default-header {
     @apply text-white text-2xl underline;
   }
+
+  .nav-link {
+    @apply flex items-center justify-center h-12 w-12 bg-transparent hover:bg-white dark:bg-transparent 
+  text-white hover:text-gray-900 hover:bg-opacity-40 hover:rounded-xl rounded-3xl border-[1px]
+    transition-all duration-300 ease-linear
+    cursor-pointer shadow-lg mr-5;
+  }
 }

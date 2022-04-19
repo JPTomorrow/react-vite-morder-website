@@ -7,10 +7,21 @@
     @apply text-white text-2xl underline;
   }
 
+  .nav {
+    @apply flex justify-end top-0 left-0 fixed z-[999] px-5 py-5 h-auto w-screen;
+  }
+
   .nav-link {
     @apply flex items-center justify-center h-12 w-12 bg-transparent hover:bg-white dark:bg-transparent 
   text-white hover:text-gray-900 hover:bg-opacity-40 hover:rounded-xl rounded-3xl border-[1px]
     transition-all duration-300 ease-linear
     cursor-pointer shadow-lg mr-5;
+  }
+
+  .nav-link-tooltip {
+    @apply absolute w-auto p-2 m-2 min-w-max top-[68px] rounded-md shadow-md
+    text-white bg-transparent border-[1px] 
+    text-xs font-bold 
+    transition-all duration-200 scale-0 origin-center;
   }
 }

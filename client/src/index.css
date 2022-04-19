@@ -12,16 +12,25 @@
   }
 
   .nav-link {
-    @apply flex items-center justify-center h-12 w-12 bg-transparent hover:bg-white dark:bg-transparent 
-  text-white hover:text-gray-900 hover:bg-opacity-40 hover:rounded-xl rounded-3xl border-[1px]
+    @apply flex items-center justify-center h-12 w-12 
+    bg-transparent hover:bg-white dark:bg-transparent 
+    text-white hover:text-gray-900 hover:bg-opacity-40 
+    hover:rounded-xl rounded-3xl border-[1px]
     transition-all duration-300 ease-linear
     cursor-pointer shadow-lg mr-5;
   }
 
   .nav-link-tooltip {
-    @apply absolute w-auto p-2 m-2 min-w-max top-[68px] rounded-md shadow-md
-    text-white bg-transparent border-[1px] 
-    text-xs font-bold 
-    transition-all duration-200 scale-0 origin-center;
+    @apply absolute w-auto p-2 m-2 min-w-max top-[68px] 
+    rounded-md shadow-md text-white bg-transparent border-[1px] 
+    text-xs font-bold transition-all duration-200 scale-0 origin-center;
+  }
+
+  .space-bg {
+    @apply bg-homepage-bg-1 bg-top bg-no-repeat bg-cover h-screen w-full drop-shadow-xl border-b-2 border-b-gray-800;
+  }
+
+  .homepage-banner {
+    @apply flex flex-col justify-center place-items-center h-screen;
   }
 }

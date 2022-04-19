@@ -1,22 +1,41 @@
-import styles from "@/pages/HomePage.module.css";
 import NewsEntry from "@/components/NewsEntry";
 import Button from "@/components/Button";
 import SearchBar from "@/components/SearchBar";
+import { useState, useEffect } from "react";
 
 import newsEntries from "@/data/news-entries.json";
 
-export default function HomePage() {
+const AnimatedText = ({ children }) => {
+  return (
+    <div className="text-white text-center text-5xl font-light">{children}</div>
+  );
+};
+
+function HomePage() {
   const updateSearch = (searchVal) => {
     console.log(searchVal);
     if (searchVal === "") return;
   };
 
+  const quote_lines = [
+    "Knowledge must continually be renewed by ceaseless effort...",
+    "It resembles a statue of marble...",
+    "continually threatened by the shifting sands",
+  ];
+
   return (
     <>
       {/* <SearchBar className={styles["search-bar"]} onChange={updateSearch} /> */}
-      <div className="bg-homepage-bg-1 bg-top bg-no-repeat bg-cover h-screen w-full drop-shadow-xl border-b-2 border-b-gray-800">
-        <div className="flex justify-center place-items-center h-screen">
-          <h1 className="text-white text-3xl font-light">Justin Morrow</h1>
+      <div className="space-bg">
+        <div className="homepage-banner">
+          <AnimatedText>Justin Morrow</AnimatedText>
+          <p className="text-white text-center text-xl font-light w-[50%] mt-5">
+            {quote_lines[0]}
+            <br />
+            {quote_lines[1]}
+            <br />
+            {quote_lines[2]}
+          </p>
         </div>
       </div>
       <div className="bg-gray-900 pb-10 pl-10">
@@ -40,3 +59,5 @@ export default function HomePage() {
     </>
   );
 }
+
+export default HomePage;

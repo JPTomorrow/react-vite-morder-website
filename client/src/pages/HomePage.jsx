@@ -1,13 +1,24 @@
 import NewsEntry from "@/components/NewsEntry";
 import Button from "@/components/Button";
 import SearchBar from "@/components/SearchBar";
-import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 import newsEntries from "@/data/news-entries.json";
 
 const AnimatedText = ({ children }) => {
   return (
-    <div className="text-white text-center text-5xl font-light">{children}</div>
+    <div className="flex">
+      {children.split("").map((letter, i) => {
+        return (
+          <motion.div
+            key={i}
+            className="inline-block text-white text-center text-5xl font-light"
+          >
+            {letter === " " ? "\u00A0" : letter}
+          </motion.div>
+        );
+      })}
+    </div>
   );
 };
 

@@ -19,6 +19,9 @@
       "type": "npm",
       "script": "build",
       "problemMatcher": [],
+      "options": {
+        "cwd": "./client"
+      },
       "label": "build website"
     },
     {

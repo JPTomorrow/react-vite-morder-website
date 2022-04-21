@@ -4,7 +4,7 @@
 
 @layer components {
   .default-header {
-    @apply text-white text-2xl underline;
+    @apply text-2xl underline;
   }
 
   .nav {
@@ -40,5 +40,9 @@
 
   .banner-quote-text {
     @apply text-white text-center text-xl font-light w-[50%];
+  }
+
+  .news-entry {
+    @apply bg-white opacity-60 blur-[20%] rounded-2xl p-5;
   }
 }

@@ -5,10 +5,7 @@
     },
     "size": "cover"
   },
-  "fullScreen": {
-    "enable": false,
-    "zIndex": -9999
-  },
+
   "particles": {
     "color": {
       "value": "rgba(99, 141, 255, 1)"
@@ -36,7 +33,7 @@
       "density": {
         "enable": true
       },
-      "value": 1500
+      "value": 500
     },
     "opacity": {
       "random": {

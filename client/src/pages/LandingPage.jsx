@@ -1,7 +1,3 @@
-import NewsEntry from "@/components/NewsEntry";
-import Button from "@/components/Button";
-import SearchBar from "@/components/SearchBar";
-import newsEntries from "@/data/news-entries.json";
 import WaveText from "@/components/WaveText";
 import { BsChevronDoubleDown as ChevronDown } from "react-icons/bs";
 
@@ -11,17 +7,10 @@ import { loadFull } from "tsparticles";
 
 const ParticleBg = () => {
   const particlesInit = async (main) => {
-    console.log(main);
-
-    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(main);
   };
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
+  const particlesLoaded = (container) => {};
 
   return (
     <Particles
@@ -33,21 +22,15 @@ const ParticleBg = () => {
   );
 };
 
-function HomePage() {
-  const updateSearch = (searchVal) => {
-    console.log(searchVal);
-    if (searchVal === "") return;
-  };
+const quote_lines = [
+  "Knowledge must continually be renewed...",
+  "It resembles a statue of marble...",
+  "threatened by the shifting sands",
+];
 
-  const quote_lines = [
-    "Knowledge must continually be renewed by ceaseless effort...",
-    "It resembles a statue of marble...",
-    "continually threatened by the shifting sands",
-  ];
-
+function LandingPage() {
   return (
     <>
-      {/* <SearchBar className={styles["search-bar"]} onChange={updateSearch} /> */}
       <div className="space-bg">
         <div className="homepage-banner">
           <WaveText
@@ -81,35 +64,17 @@ function HomePage() {
           </WaveText>
         </div>
         <div className="flex flex-col items-center justify-center w-full absolute bottom-[5px]">
-          <p className="text-white opacity-20">Blog</p>
+          <p className="text-white opacity-30">Blog</p>
           <ChevronDown
-            className=" text-white opacity-20"
+            className=" text-white opacity-30"
             style={{ transform: "scale(2.0, 0.7)" }}
             size="40"
           />
         </div>
         <ParticleBg />
       </div>
-      <div className="bg-gray-900 pb-10 pl-10">
-        <h1 className="text-white text-3xl pb-5 pt-5">News</h1>
-        {Object.values(newsEntries).map((entry, index) => {
-          return (
-            <NewsEntry
-              className="mt-5"
-              header={entry.name}
-              content={entry.content}
-              key={index}
-              buttons={
-                <Button onClick={() => console.log("clicked")}>
-                  {entry.button_text}
-                </Button>
-              }
-            />
-          );
-        })}
-      </div>
     </>
   );
 }
 
-export default HomePage;
+export default LandingPage;

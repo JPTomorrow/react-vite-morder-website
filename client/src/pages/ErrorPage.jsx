@@ -1,9 +1,9 @@
-import style from "@/pages/ErrorPage.module.css";
-
-export default function ErrorPage() {
+function ErrorPage() {
   return (
-    <main className={style["err-body"]}>
+    <main className="p-5">
       <p>There's nothing here!</p>
     </main>
   );
 }
+
+export default ErrorPage;

@@ -4,8 +4,6 @@ import "@/index.css";
 import App from "@/App";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import HomePage from "@/pages/HomePage";
-import TestPage from "@/pages/TestPage";
 import ErrorPage from "@/pages/ErrorPage";
 
 ReactDOM.render(
@@ -15,8 +13,8 @@ ReactDOM.render(
       will be nested in it using the <Outlet /> 
       from react-router */}
       <Route path="/" element={<App />}>
-        <Route index element={<HomePage />} />
-        <Route path="test_page" element={<TestPage />} />
+        {/* <Route index element={<HomePage />} /> */}
+        {/* <Route path="test_page" element={<TestPage />} /> */}
         <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>

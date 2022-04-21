@@ -43,7 +43,7 @@ function WaveText({
               "rgba(0, 20, 99, 1)",
               "rgba(255, 255, 255, 1)",
             ],
-            opacity: startHidden ? [0, 1] : 1,
+            opacity: 1,
             scale: [1.0, 1.7, 1.0],
             transition: {
               delay: startDelay + delay,
@@ -56,12 +56,16 @@ function WaveText({
           },
           hide: {
             opacity: startHidden ? 0 : 1,
+            transition: {
+              duration: 0.1,
+            },
           },
         };
 
         return (
           <motion.div
             key={i}
+            initial="hide"
             animate="changeColor"
             variants={txtVariants}
             className={`${className}`}

@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 @layer components {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
   .default-header {
     @apply text-2xl underline;
   }

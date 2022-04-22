@@ -28,52 +28,50 @@ const quote_lines = [
   "threatened by the shifting sands",
 ];
 
-function LandingPage() {
+function LandingPage(props) {
   return (
-    <>
-      <div className="space-bg">
-        <div className="homepage-banner">
-          <WaveText
-            startDelay={0.5}
-            startHidden={true}
-            loop={false}
-            className="banner-name-text"
-          >
-            Justin Morrow
-          </WaveText>
-          <WaveText
-            startDelay={2.0}
-            startHidden={true}
-            className="banner-quote-text mt-5"
-          >
-            {quote_lines[0]}
-          </WaveText>
-          <WaveText
-            startDelay={2.5}
-            startHidden={true}
-            className="banner-quote-text"
-          >
-            {quote_lines[1]}
-          </WaveText>
-          <WaveText
-            startDelay={3.0}
-            startHidden={true}
-            className="banner-quote-text"
-          >
-            {quote_lines[2]}
-          </WaveText>
-        </div>
-        <div className="flex flex-col items-center justify-center w-full absolute bottom-[5px]">
-          <p className="text-white opacity-30">Blog</p>
-          <ChevronDown
-            className=" text-white opacity-30"
-            style={{ transform: "scale(2.0, 0.7)" }}
-            size="40"
-          />
-        </div>
-        <ParticleBg />
+    <div className="space-bg" ref={props.scrollRef}>
+      <div className="homepage-banner">
+        <WaveText
+          startDelay={0.5}
+          startHidden={true}
+          loop={false}
+          className="banner-name-text"
+        >
+          Justin Morrow
+        </WaveText>
+        <WaveText
+          startDelay={2.0}
+          startHidden={true}
+          className="banner-quote-text mt-5"
+        >
+          {quote_lines[0]}
+        </WaveText>
+        <WaveText
+          startDelay={2.5}
+          startHidden={true}
+          className="banner-quote-text"
+        >
+          {quote_lines[1]}
+        </WaveText>
+        <WaveText
+          startDelay={3.0}
+          startHidden={true}
+          className="banner-quote-text"
+        >
+          {quote_lines[2]}
+        </WaveText>
       </div>
-    </>
+      <div className="flex flex-col items-center justify-center w-full absolute bottom-[5px]">
+        <p className="text-white opacity-30">Blog</p>
+        <ChevronDown
+          className=" text-white opacity-30"
+          style={{ transform: "scale(2.0, 0.7)" }}
+          size="40"
+        />
+      </div>
+      <ParticleBg />
+    </div>
   );
 }
 

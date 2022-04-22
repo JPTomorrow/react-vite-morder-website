@@ -25,7 +25,7 @@ const ParticleBg = () => {
 const quote_lines = [
   "Knowledge must continually be renewed...",
   "It resembles a statue of marble...",
-  "threatened by the shifting sands",
+  "threatened by the shiftinge sands",
 ];
 
 function LandingPage(props) {

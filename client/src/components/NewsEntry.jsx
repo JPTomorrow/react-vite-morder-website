@@ -3,8 +3,8 @@ import React from "react";
 function NewsEntry(props, { className }) {
   return (
     <div className="news-entry">
-      <div className="default-header text-gray-700">{props.header}</div>
-      <div className="text-gray-700">{props.content}</div>
+      <div className="default-header text-white">{props.header}</div>
+      <div className="text-white">{props.content}</div>
       {props.buttons}
     </div>
   );

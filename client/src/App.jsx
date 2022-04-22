@@ -1,14 +1,11 @@
-import "@/App.css";
-import NewsPage from "@/pages/NewsPage";
+import AboutPage from "@/pages/AboutPage";
 import LandingPage from "@/pages/LandingPage";
 import ScrollLink from "@/components/ScrollLink";
+import { useRef } from "react";
 
 import { GoArchive } from "react-icons/go";
 import { AiOutlineHome, AiOutlineMail } from "react-icons/ai";
-import { BsBook } from "react-icons/bs";
-
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { useRef } from "react";
+import { BsPerson } from "react-icons/bs";
 
 export default function App() {
   const landingRef = useRef();
@@ -17,7 +14,7 @@ export default function App() {
     ref.current.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <>
+    <div>
       <div className="nav">
         <ScrollLink
           onClick={() => ScrollToPage(landingRef)}
@@ -26,14 +23,14 @@ export default function App() {
         />
         <ScrollLink
           onClick={() => ScrollToPage(newsRef)}
-          icon={<BsBook size="24" />}
-          tooltip="Blog"
+          icon={<BsPerson size="24" />}
+          tooltip="About"
         />
         <ScrollLink icon={<GoArchive size="24" />} tooltip="Projects" />
         <ScrollLink icon={<AiOutlineMail size="24" />} tooltip="Contact Me" />
       </div>
       <LandingPage scrollRef={landingRef} />
-      <NewsPage scrollRef={newsRef} />
-    </>
+      <AboutPage scrollRef={newsRef} />
+    </div>
   );
 }

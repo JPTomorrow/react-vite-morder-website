@@ -14,7 +14,7 @@ module.exports = {
     },
     colors: {
       transparent: "transparent",
-      gray: colors.gray,
+      gray: colors.stone,
       white: "ghostwhite",
     },
   },

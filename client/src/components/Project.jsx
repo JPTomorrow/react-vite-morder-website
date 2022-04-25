@@ -27,7 +27,7 @@ function Project({
         <h2 className="text-xl">{subTitle}</h2>
         <h2 className="text-xl">{skillsUsed}</h2>
         <div className="mt-2">{githubButton}</div>
-        <
+
         <ul className="pl-6 mt-3 list-disc">
           {description.map((bulletPoint, i) => {
             return <li key={i}>{bulletPoint}</li>;

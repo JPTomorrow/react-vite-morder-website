@@ -28,9 +28,9 @@ const container = {
     scale: [0.5, 1],
     opacity: [0, 1],
     transition: {
-      duration: 1,
+      duration: 0.8,
       staggerChildren: 0.5,
-      ease: "easeOut",
+      ease: "easeInOut",
     },
   },
 };
@@ -69,7 +69,6 @@ function SkillBadges(props) {
         initial={{ scale: 0 }}
         whileInView="show"
         variants={container}
-        viewport={{ once: true }}
         className="skill-badges grid-cols-3"
       >
         {getSkillBadges(0, 3)}
@@ -78,7 +77,6 @@ function SkillBadges(props) {
         initial={{ scale: 0 }}
         whileInView="show"
         variants={container}
-        viewport={{ once: true }}
         className="skill-badges grid-cols-4"
       >
         {getSkillBadges(3, 8)}
@@ -87,7 +85,6 @@ function SkillBadges(props) {
         initial={{ scale: 0 }}
         whileInView="show"
         variants={container}
-        viewport={{ once: true }}
         className="skill-badges grid-cols-4"
       >
         {getSkillBadges(8, 12)}

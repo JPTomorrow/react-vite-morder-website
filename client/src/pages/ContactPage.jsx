@@ -9,8 +9,8 @@ function ContactPage(props) {
     >
       <StarHeader className="pt-20">Contact Me</StarHeader>
       <div className="flex flex-col mt-[75px]">
-        <input placeholder="First Name" className="contact-input" />
-        <input placeholder="Last Name" className="mt-[25px] contact-input" />
+        <input placeholder="Name" className="contact-input" />
+        <input placeholder="Email" className="mt-[25px] contact-input" />
         <textarea placeholder="Message" className="mt-[25px] contact-input" />
       </div>
       <div className="m-[40px]" />

@@ -22,7 +22,7 @@ const barVarients = (itemCount, index) => {
 function StarHeader(props) {
   function makeBars() {
     let bars = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < props.children.length; i++) {
       bars.push(
         <motion.div
           animate="expand"

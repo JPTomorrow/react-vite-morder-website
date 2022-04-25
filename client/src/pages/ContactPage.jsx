@@ -13,7 +13,10 @@ function ContactPage(props) {
         <input placeholder="Last Name" className="mt-[25px] contact-input" />
         <textarea placeholder="Message" className="mt-[25px] contact-input" />
       </div>
-      <Button>Submit</Button>
+      <div className="m-[40px]" />
+      <Button onClick={() => alert("Thank you for reaching out")}>
+        Submit
+      </Button>
       <RoundedSeparator className="fill-gray-900" />
     </div>
   );

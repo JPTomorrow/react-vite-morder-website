@@ -36,7 +36,8 @@
   }
 
   .space-bg {
-    @apply bg-homepage-bg-1 bg-top bg-no-repeat bg-cover h-screen w-full drop-shadow-xl border-b-2 border-b-gray-800;
+    @apply bg-homepage-bg-1 bg-top bg-no-repeat bg-cover 
+    h-[calc(100vh+80px)] w-full drop-shadow-xl border-b-2 border-b-gray-800;
   }
 
   .homepage-banner {
@@ -56,18 +57,22 @@
   }
 
   .mission-statement {
-    @apply flex mx-auto my-[100px] text-white w-[350px];
+    @apply flex mx-auto text-center my-[75px] text-white w-[350px];
   }
 
   .skill-badges {
-    @apply flex flex-col m-10 items-center justify-center;
+    @apply flex mx-auto mt-3 items-center justify-center place-items-center gap-2;
   }
 
   .skill-badge-border {
-    @apply bg-gradient-to-br from-[#7928ca] to-[#ff0080] rounded-3xl blur;
+    @apply rounded-2xl w-[75px];
   }
 
   .skill-badge {
-    @apply bg-gray-800 m-1 text-white pl-4 pr-4 pt-2 pb-2 rounded-3xl;
+    @apply bg-gray-800 m-[2px] text-white pl-2 pr-2 pt-1 pb-1 rounded-2xl;
+  }
+
+  .contact-input {
+    @apply w-[500px] mx-auto py-[5px] px-[10px] text-white bg-transparent border-[1px] rounded-md;
   }
 }

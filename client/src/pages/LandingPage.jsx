@@ -62,14 +62,14 @@ function LandingPage(props) {
           {quote_lines[2]}
         </WaveText>
       </div>
-      <div className="flex flex-col items-center justify-center w-full absolute bottom-[5px]">
+      {/* <div className="flex flex-col items-center justify-center w-full absolute bottom-[5px]">
         <p className="text-white opacity-30">Blog</p>
         <ChevronDown
           className=" text-white opacity-30"
           style={{ transform: "scale(2.0, 0.7)" }}
           size="40"
         />
-      </div>
+      </div> */}
       <ParticleBg />
     </div>
   );

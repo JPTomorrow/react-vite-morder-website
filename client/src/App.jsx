@@ -1,5 +1,7 @@
 import AboutPage from "@/pages/AboutPage";
 import LandingPage from "@/pages/LandingPage";
+import ProjectsPage from "@/pages/ProjectsPage";
+import ContactPage from "@/pages/ContactPage";
 import ScrollLink from "@/components/ScrollLink";
 import { useRef } from "react";
 
@@ -10,6 +12,8 @@ import { BsPerson } from "react-icons/bs";
 export default function App() {
   const landingRef = useRef();
   const newsRef = useRef();
+  const projectsRef = useRef();
+  const contactRef = useRef();
   const ScrollToPage = (ref) =>
     ref.current.scrollIntoView({ behavior: "smooth" });
 
@@ -26,11 +30,21 @@ export default function App() {
           icon={<BsPerson size="24" />}
           tooltip="About"
         />
-        <ScrollLink icon={<GoArchive size="24" />} tooltip="Projects" />
-        <ScrollLink icon={<AiOutlineMail size="24" />} tooltip="Contact Me" />
+        <ScrollLink
+          onClick={() => ScrollToPage(projectsRef)}
+          icon={<GoArchive size="24" />}
+          tooltip="Projects"
+        />
+        <ScrollLink
+          onClick={() => ScrollToPage(contactRef)}
+          icon={<AiOutlineMail size="24" />}
+          tooltip="Contact Me"
+        />
       </div>
       <LandingPage scrollRef={landingRef} />
       <AboutPage scrollRef={newsRef} />
+      <ProjectsPage scrollRef={projectsRef} />
+      <ContactPage scrollRef={contactRef} />
     </div>
   );
 }

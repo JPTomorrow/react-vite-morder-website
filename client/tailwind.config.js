@@ -8,14 +8,14 @@ module.exports = {
       backgroundImage: {
         "homepage-bg-1": 'url("@/assets/homepage-bg-1.jpg")',
       },
+      colors: {
+        transparent: "transparent",
+        gray: colors.stone,
+        white: "ghostwhite",
+      },
     },
     fontFamily: {
       sans: ["Montserrat", "sans-serif"],
-    },
-    colors: {
-      transparent: "transparent",
-      gray: colors.stone,
-      white: "ghostwhite",
     },
   },
   plugins: [],

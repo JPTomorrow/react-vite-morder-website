@@ -42,7 +42,7 @@ const txtVariants = {
   },
 };
 
-function Button({ onClick, uppercase, children, className }) {
+function Button({ className, onClick, uppercase, children }) {
   return (
     <motion.button
       whileHover={[
@@ -55,7 +55,7 @@ function Button({ onClick, uppercase, children, className }) {
       whileTap="yOffsetSelfReset"
       initial="initial"
       exit="exit"
-      className={styles["container"]}
+      className={[styles["container"], className].join(" ")}
       variants={containerVariants}
       onClick={onClick}
     >

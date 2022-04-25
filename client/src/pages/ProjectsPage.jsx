@@ -46,11 +46,11 @@ function ProjectsPage(props) {
         {Object.values(proffesionalProjects).map((project, i) => {
           <Project
             key={i}
-            title={project.title}
-            subTitle={project.subTitle}
-            skillsUsed={project.skillsUsed}
-            description={project.description}
-            githubLink={project.githubLink}
+            title={project["title"]}
+            subTitle={project["subTitle"]}
+            skillsUsed={project["skillsUsed"]}
+            description={project["description"]}
+            githubLink={project["githubLink"]}
           />;
         })}
       </div>

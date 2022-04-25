@@ -73,6 +73,6 @@
   }
 
   .contact-input {
-    @apply w-[500px] mx-auto py-[5px] px-[10px] text-white bg-transparent border-[1px] rounded-md;
+    @apply w-[85%] mx-auto py-[5px] px-[10px] text-white bg-transparent border-[1px] rounded-md;
   }
 }

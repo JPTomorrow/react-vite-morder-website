@@ -34,7 +34,7 @@ function AboutPage(props) {
       className="relative text-center bg-gray-900 pb-10 h-full"
       ref={props.scrollRef}
     >
-      <StarHeader className="pt-20">About</StarHeader>
+      <StarHeader className="pt-20">About Me</StarHeader>
       <div className="mission-statement">
         Software Developer with greater than 4 years of hands-on experience
         designing and integrating software to meet a client's needs who is a

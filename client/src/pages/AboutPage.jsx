@@ -20,7 +20,7 @@ const ParticleBg = () => {
 
   return (
     <Particles
-      className="absolute z-[-99999] top-0 left-0 w-full h-full"
+      className="absolute top-0 left-0 w-full h-full"
       options={particleOptions}
       init={particlesInit}
       loaded={particlesLoaded}
@@ -46,8 +46,8 @@ function AboutPage(props) {
       <div className="my-[75px]">
         <SkillBadges />
       </div>
-      <ParticleBg />
       <RoundedSeparator className="fill-gray-900" />
+      <ParticleBg />
     </div>
   );
 }

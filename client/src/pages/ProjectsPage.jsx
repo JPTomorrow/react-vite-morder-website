@@ -6,13 +6,13 @@ import TestImg from "@/assets/homepage-bg-1.jpg";
 
 const proffesionalProjects = {
   bomGenerator: {
-    title: "Test Project",
-    subTitle: "Test Subtitle",
-    skillsUsed: "React, Node, Express, MongoDB",
+    title: "Bill of Materials Generator",
+    subTitle: "WPF Application",
+    skillsUsed: "C#, WPF",
     description: [
-      "This is a test project",
-      "This is a test project",
-      "This is a test project",
+      "Uses Revit API for interoperability with Autodesk Revit",
+      "Generates Bill of Materials from the 3D CAD models that Revit produces",
+      "Systems for calculating wire and Hanger systems for MEP conduit racks",
     ],
     image: <img src={TestImg} />,
     githubLink:
@@ -35,19 +35,6 @@ const proffesionalProjects = {
 
 const personalProjects = {
   bomGenerator: {
-    title: "Test Project",
-    subTitle: "Test Subtitle",
-    skillsUsed: "React, Node, Express, MongoDB",
-    description: [
-      "This is a test project",
-      "This is a test project",
-      "This is a test project",
-    ],
-    image: <img src={TestImg} />,
-    githubLink:
-      "https://github.com/JPTomorrow/revit-bill-of-materials-generator",
-  },
-  bomGenerator2: {
     title: "Test Project",
     subTitle: "Test Subtitle",
     skillsUsed: "React, Node, Express, MongoDB",

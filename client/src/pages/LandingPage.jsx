@@ -41,6 +41,14 @@ function LandingPage(props) {
           Justin Morrow
         </WaveText>
         <WaveText
+          startDelay={0.8}
+          startHidden={true}
+          loop={false}
+          className="banner-name-text text-xl"
+        >
+          Full Stack Developer
+        </WaveText>
+        <WaveText
           startDelay={2.0}
           startHidden={true}
           className="banner-quote-text mt-5"

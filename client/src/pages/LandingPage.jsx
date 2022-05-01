@@ -46,7 +46,7 @@ function LandingPage(props) {
           loop={false}
           className="banner-name-text text-xl"
         >
-          Full Stack Developer
+          Software Developer
         </WaveText>
         <WaveText
           startDelay={2.0}

@@ -55,7 +55,7 @@ function Button({ className, onClick, uppercase, children }) {
       whileTap="yOffsetSelfReset"
       initial="initial"
       exit="exit"
-      className={[styles["container"], className].join(" ")}
+      className={["custom-button", className].join(" ")}
       variants={containerVariants}
       onClick={onClick}
     >

@@ -1,4 +1,5 @@
 import { AiFillGithub } from "react-icons/ai";
+import { FaYenSign } from "react-icons/fa";
 
 const animContainers = () => {
   return <div className="absolute"></div>;
@@ -22,7 +23,7 @@ function Project({
 
   return (
     <>
-      <div className={["project-container", className].join(" ")}>
+      <div className={["project-container relative", className].join(" ")}>
         <h1 className="text-2xl">{title}</h1>
         <h2 className="text-xl">{subTitle}</h2>
         <h2 className="text-xl">{skillsUsed}</h2>
@@ -33,6 +34,10 @@ function Project({
             return <li key={i}>{bulletPoint}</li>;
           })}
         </ul>
+        <div className="absolute z-[-10] w-full h-full top-0 left-0 bg-gradient-to-r from-gray-700  via-gray-700 to-transparent" />
+        {image ? (
+          <img className="absolute z-[-15] top-0 right-0 h-full" src={image} />
+        ) : null}
       </div>
     </>
   );

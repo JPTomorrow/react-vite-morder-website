@@ -3,6 +3,7 @@ import StarHeader from "@/components/StarHeader";
 import Project from "@/components/Project";
 
 import TestImg from "@/assets/homepage-bg-1.jpg";
+import trainingVid from "@/assets/marathon-training-videos-pic.png";
 
 const proffesionalProjects = {
   bomGenerator: {
@@ -14,7 +15,7 @@ const proffesionalProjects = {
       "Generates Bill of Materials from the 3D CAD models that Revit produces",
       "Systems for calculating wire and Hanger systems for MEP conduit racks",
     ],
-    image: <img src={TestImg} />,
+    image: TestImg,
     githubLink:
       "https://github.com/JPTomorrow/revit-bill-of-materials-generator",
   },
@@ -28,7 +29,7 @@ const proffesionalProjects = {
       "The results of that test will be emailed to their supervisor for review",
       "Uses Microsoft azure to host the website and Azure functions to send the email to a supervisor",
     ],
-    image: <img src={TestImg} />,
+    image: trainingVid,
     githubLink: "https://github.com/JPTomorrow/marathon-training-videos",
   },
   bluebeamInWall: {
@@ -41,7 +42,7 @@ const proffesionalProjects = {
       "",
       "Uses Microsoft azure to host the website and Azure functions to send the email to a supervisor",
     ],
-    image: <img src={TestImg} />,
+    image: TestImg,
     githubLink: "https://github.com/JPTomorrow/bluebeam-pthree-in-wall",
   },
 };
@@ -62,6 +63,7 @@ function ProjectsPage(props) {
               subTitle={project["subTitle"]}
               skillsUsed={project["skillsUsed"]}
               description={project["description"]}
+              image={project["image"]}
               githubLink={project["githubLink"]}
             />
           );

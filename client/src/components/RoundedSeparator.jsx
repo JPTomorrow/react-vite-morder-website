@@ -9,7 +9,7 @@ function RoundedSeparator({ className }) {
     >
       <defs>
         <clipPath id="shape">
-          <path d="M0,0 L0,80 Q250,0 500,80 L500,0 Z" />
+          <path d="M0,0 L0,80 Q250,30d 500,80 L500,0 Z" />
         </clipPath>
       </defs>
       <rect

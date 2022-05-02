@@ -36,7 +36,10 @@ function Project({
         </ul>
         <div className="absolute z-[-10] w-full h-full top-0 left-0 bg-gradient-to-r from-gray-700  via-gray-700 to-transparent" />
         {image ? (
-          <img className="absolute z-[-15] top-0 right-0 h-full" src={image} />
+          <img
+            className="absolute z-[-15] top-0 right-0 h-full w-[600px]"
+            src={image}
+          />
         ) : null}
       </div>
     </>

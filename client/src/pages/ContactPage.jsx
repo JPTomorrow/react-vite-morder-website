@@ -1,6 +1,38 @@
 import RoundedSeparator from "@/components/RoundedSeparator";
 import StarHeader from "@/components/StarHeader";
 import Button from "@/components/Button";
+
+import mailer from "nodemailer";
+import creds from "@/creds/mailing-creds.json";
+
+const SendMail = () => {
+  module.exports = async function (context, req) {
+    // this is being read as a value from the configuraiton
+    // key: values in azure on the static web app
+    const username = creds["USERNAME"];
+    const password = creds["PASSWORD"];
+
+    let transporter = nodemailer.createTransport({
+      host: "smtp.office365.com",
+      port: 587,
+      secure: false,
+      auth: {
+        user: username,
+        pass: password,
+      },
+    });
+
+    let info = await transporter.sendMail({
+      from: username,
+      to: username + ", safetyonboarding@marathonelectrical.com",
+      subject: req.body.subject,
+      html: req.body.message, // html body
+    });
+
+    console.log("Message sent: %s", info.messageId);
+  };
+};
+
 function ContactPage(props) {
   return (
     <div
@@ -13,10 +45,7 @@ function ContactPage(props) {
         <input placeholder="Email" className="mt-[25px] contact-input" />
         <textarea placeholder="Message" className="mt-[25px] contact-input" />
         <div className="mt-[5px] w-[400px] mx-auto">
-          <Button
-            className="float-left"
-            onClick={() => alert("Thank you for reaching out")}
-          >
+          <Button className="float-left" onClick={() => SendMail()}>
             Submit
           </Button>
         </div>

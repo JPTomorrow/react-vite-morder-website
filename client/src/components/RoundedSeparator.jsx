@@ -16,7 +16,6 @@ function RoundedSeparator({ className }) {
         x="0"
         y="0"
         width="500"
-        j
         height="80"
         className={className}
         clipPath="url(#shape)"

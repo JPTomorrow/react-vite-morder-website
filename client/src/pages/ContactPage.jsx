@@ -1,39 +1,48 @@
 import RoundedSeparator from "@/components/RoundedSeparator";
 import StarHeader from "@/components/StarHeader";
 import Button from "@/components/Button";
+import { useRef } from "react";
 
-import mailer from "nodemailer";
+// import mailer from "nodemailer";
 import creds from "@/creds/mailing-creds.json";
 
-const SendMail = () => {
-  module.exports = async function (context, req) {
-    // this is being read as a value from the configuraiton
-    // key: values in azure on the static web app
-    const username = creds["USERNAME"];
-    const password = creds["PASSWORD"];
+// const SendMail = (fromEmail, body) => {
+//   if (fromEmail === "" || body === "") return;
 
-    let transporter = nodemailer.createTransport({
-      host: "smtp.office365.com",
-      port: 587,
-      secure: false,
-      auth: {
-        user: username,
-        pass: password,
-      },
-    });
+//   const username = creds["TO_EMAIL"];
+//   const password = creds["PASSWORD"];
 
-    let info = await transporter.sendMail({
-      from: username,
-      to: username + ", safetyonboarding@marathonelectrical.com",
-      subject: req.body.subject,
-      html: req.body.message, // html body
-    });
+//   let transporter = mailer.createTransport({
+//     service: "gmail",
+//     auth: {
+//       user: username,
+//       pass: password,
+//     },
+//   });
 
-    console.log("Message sent: %s", info.messageId);
-  };
+//   const mailOptions = {
+//     from: username,
+//     to: username,
+//     subject: "email sent from morrder.com from: " + fromEmail,
+//     text: "FROM: " + fromEmail + "\n" + body,
+//     // html: req.body.message, // html body
+//   };
+
+//   let info = transporter.sendMail(mailOptions);
+//   console.log("Message sent: %s", info.messageId);
+// };
+
+// SendMail(email, makeBody(name, message))
+
+const makeBody = (name, message) => {
+  return name + "\n\n" + message;
 };
 
 function ContactPage(props) {
+  const name = useRef(null);
+  const email = useRef(null);
+  const message = useRef(null);
+
   return (
     <div
       ref={props.scrollRef}
@@ -41,11 +50,19 @@ function ContactPage(props) {
     >
       <StarHeader className="pt-20">Contact Me</StarHeader>
       <div className="flex flex-col mt-[75px]">
-        <input placeholder="Name" className="contact-input" />
-        <input placeholder="Email" className="mt-[25px] contact-input" />
-        <textarea placeholder="Message" className="mt-[25px] contact-input" />
+        <input ref={name} placeholder="Name" className="contact-input" />
+        <input
+          ref={email}
+          placeholder="Email"
+          className="mt-[25px] contact-input"
+        />
+        <textarea
+          ref={message}
+          placeholder="Message"
+          className="mt-[25px] contact-input"
+        />
         <div className="mt-[5px] w-[400px] mx-auto">
-          <Button className="float-left" onClick={() => SendMail()}>
+          <Button className="float-left" onClick={() => alert("sending mail")}>
             Submit
           </Button>
         </div>

@@ -11,18 +11,23 @@
       "problemMatcher": []
     },
     {
+      "label": "scp: deploy website to server",
       "type": "shell",
-      "command": "scp -r ./client/dist/* root@31.220.17.56:/var/www/morderindustries.com/public",
-      "label": "scp: deploy website to server"
+      "command": "scp -r ./client/dist/* root@31.220.17.56:/var/www/morderindustries.com/public"
     },
     {
+      "label": "publish backend api to server morderindustries.com",
+      "type": "shell",
+      "command": "scp -r ./server/* root@31.220.17.56:/var/www/morderindustries.com/api"
+    },
+    {
+      "label": "build website",
       "type": "npm",
       "script": "build",
       "problemMatcher": [],
       "options": {
         "cwd": "./client"
-      },
-      "label": "build website"
+      }
     },
     {
       "label": "publish website to morderindustries.com",
@@ -34,7 +39,7 @@
       }
     },
     {
-      "label": "serve database (testing)",
+      "label": "serve backend api (testing)",
       "type": "shell",
       "command": "npm run devStart",
       "options": {

@@ -9,6 +9,7 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+/*
 // get credentials and redirect URLS
 //const redirect_urls = require("./creds/redirect_url.json");
 const creds_json = require("./creds/creds.json");
@@ -53,5 +54,50 @@ app.get("/api/scrape_test", (req, res) => {
     res.send(sodas);
   });
 });
+*/
 
+// CONTACT ME EMAIL
+// import mailer from "nodemailer";
+import creds from "@/creds/mailing-creds.json";
+
+// const SendMail = (fromEmail, body) => {
+//   if (fromEmail === "" || body === "") return;
+
+//   const username = creds["TO_EMAIL"];
+//   const password = creds["PASSWORD"];
+
+//   let transporter = mailer.createTransport({
+//     service: "gmail",
+//     auth: {
+//       user: username,
+//       pass: password,
+//     },
+//   });
+
+//   const mailOptions = {
+//     from: username,
+//     to: username,
+//     subject: "email sent from morrder.com from: " + fromEmail,
+//     text: "FROM: " + fromEmail + "\n" + body,
+//     // html: req.body.message, // html body
+//   };
+
+//   let info = transporter.sendMail(mailOptions);
+//   console.log("Message sent: %s", info.messageId);
+// };
+
+// SendMail(email, makeBody(name, message))
+
+const makeBody = (name, message) => {
+  return name + "\n\n" + message;
+};
+
+// TEST IF API IS UP AND RUNNING
+
+app.get("/api/is_api_alive", (req, res) => {
+  const message = "API is alive";
+  res.send(message);
+});
+
+// SERVE API
 app.listen(8085, () => console.log("listening on http://localhost:8085"));

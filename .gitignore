@@ -26,4 +26,5 @@ client/*.sw?
 # server ignores
 server/creds/creds.json
 server/creds/redirect_url.json
+server/creds/mailing-creds.json
 server/node_modules

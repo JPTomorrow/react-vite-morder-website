@@ -56,45 +56,46 @@ app.get("/api/scrape_test", (req, res) => {
 });
 */
 
-// CONTACT ME EMAIL
-// import mailer from "nodemailer";
-import creds from "@/creds/mailing-creds.json";
+// CONTACT ME EMAIL - Morrder.com
+const mailer = require("nodemailer");
+const mailCreds = require("./creds/mailing-creds.json");
 
-// const SendMail = (fromEmail, body) => {
-//   if (fromEmail === "" || body === "") return;
+app.post("/morrder/contact_email", (req, res) => {
+  const username = mailCreds["TO_EMAIL"];
+  const password = mailCreds["PASSWORD"];
 
-//   const username = creds["TO_EMAIL"];
-//   const password = creds["PASSWORD"];
+  const body = req.body;
+  const name = body["name"];
+  const fromEmail = body["email"];
+  const message = body["message"];
 
-//   let transporter = mailer.createTransport({
-//     service: "gmail",
-//     auth: {
-//       user: username,
-//       pass: password,
-//     },
-//   });
+  const passed = name && fromEmail && message;
+  if (!passed) {
+    res.status(404).send("Please provide a name, message, and email address");
+    return;
+  }
 
-//   const mailOptions = {
-//     from: username,
-//     to: username,
-//     subject: "email sent from morrder.com from: " + fromEmail,
-//     text: "FROM: " + fromEmail + "\n" + body,
-//     // html: req.body.message, // html body
-//   };
+  let transporter = mailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: username,
+      pass: password,
+    },
+  });
 
-//   let info = transporter.sendMail(mailOptions);
-//   console.log("Message sent: %s", info.messageId);
-// };
+  const mailOptions = {
+    from: username,
+    to: username,
+    subject: "email sent from morrder.com - sender: " + fromEmail,
+    text: "FROM: " + name + "\n\n" + message,
+  };
 
-// SendMail(email, makeBody(name, message))
-
-const makeBody = (name, message) => {
-  return name + "\n\n" + message;
-};
+  let info = transporter.sendMail(mailOptions);
+  res.status(200).send("Message sent");
+});
 
 // TEST IF API IS UP AND RUNNING
-
-app.get("/api/is_api_alive", (req, res) => {
+app.get("/api/isalive", (req, res) => {
   const message = "API is alive";
   res.send(message);
 });

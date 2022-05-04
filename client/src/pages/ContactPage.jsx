@@ -3,12 +3,35 @@ import StarHeader from "@/components/StarHeader";
 import Button from "@/components/Button";
 import { useRef } from "react";
 
-
-
 function ContactPage(props) {
-  const name = useRef(null);
-  const email = useRef(null);
-  const message = useRef(null);
+  const name = useRef();
+  const email = useRef();
+  const message = useRef();
+
+  const sendMail = () => {
+    // fetch POST request endpoint /morrder/contact_email
+    const bodyContents = {
+      name: name.current.value,
+      email: email.current.value,
+      message: message.current.value,
+    };
+
+    alert(JSON.stringify(bodyContents));
+
+    const postOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(bodyContents),
+    };
+
+    fetch("http://localhost:8085/morrder/contact_email", postOptions)
+      .then((res) => {
+        res.text().then((text) => {
+          console.log(`Response: ${res.status} -> ${text}`);
+        });
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div
@@ -29,7 +52,7 @@ function ContactPage(props) {
           className="mt-[25px] contact-input"
         />
         <div className="mt-[5px] w-[400px] mx-auto">
-          <Button className="float-left" onClick={() => alert("sending mail")}>
+          <Button className="float-left" onClick={() => sendMail()}>
             Submit
           </Button>
         </div>

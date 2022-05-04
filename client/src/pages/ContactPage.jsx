@@ -16,8 +16,6 @@ function ContactPage(props) {
       message: message.current.value,
     };
 
-    alert(JSON.stringify(bodyContents));
-
     const postOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },

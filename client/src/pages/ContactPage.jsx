@@ -23,12 +23,9 @@ function ContactPage(props) {
     };
 
     fetch("http://localhost:8085/morrder/contact_email", postOptions)
-      .then((res) => {
-        res.text().then((text) => {
-          console.log(`Response: ${res.status} -> ${text}`);
-        });
-      })
-      .catch((err) => console.log(err));
+      .then((res) => res.text())
+      .then(console.log)
+      .catch((err) => console.log("THIS IS A CUSTOM ERROR" + err));
   };
 
   return (

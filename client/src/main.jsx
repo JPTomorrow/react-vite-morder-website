@@ -13,8 +13,6 @@ ReactDOM.render(
       will be nested in it using the <Outlet /> 
       from react-router */}
       <Route path="/" element={<App />}>
-        {/* <Route index element={<HomePage />} /> */}
-        {/* <Route path="test_page" element={<TestPage />} /> */}
         <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>

@@ -3,45 +3,30 @@ import StarHeader from "@/components/StarHeader";
 import Button from "@/components/Button";
 import { useRef } from "react";
 
-// import mailer from "nodemailer";
-import creds from "@/creds/mailing-creds.json";
-
-// const SendMail = (fromEmail, body) => {
-//   if (fromEmail === "" || body === "") return;
-
-//   const username = creds["TO_EMAIL"];
-//   const password = creds["PASSWORD"];
-
-//   let transporter = mailer.createTransport({
-//     service: "gmail",
-//     auth: {
-//       user: username,
-//       pass: password,
-//     },
-//   });
-
-//   const mailOptions = {
-//     from: username,
-//     to: username,
-//     subject: "email sent from morrder.com from: " + fromEmail,
-//     text: "FROM: " + fromEmail + "\n" + body,
-//     // html: req.body.message, // html body
-//   };
-
-//   let info = transporter.sendMail(mailOptions);
-//   console.log("Message sent: %s", info.messageId);
-// };
-
-// SendMail(email, makeBody(name, message))
-
-const makeBody = (name, message) => {
-  return name + "\n\n" + message;
-};
-
 function ContactPage(props) {
-  const name = useRef(null);
-  const email = useRef(null);
-  const message = useRef(null);
+  const name = useRef();
+  const email = useRef();
+  const message = useRef();
+
+  const sendMail = () => {
+    // fetch POST request endpoint /morrder/contact_email
+    const bodyContents = {
+      name: name.current.value,
+      email: email.current.value,
+      message: message.current.value,
+    };
+
+    const postOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(bodyContents),
+    };
+
+    fetch("http://localhost:8085/morrder/contact_email", postOptions)
+      .then((res) => res.text())
+      .then(console.log)
+      .catch((err) => console.log("THIS IS A CUSTOM ERROR" + err));
+  };
 
   return (
     <div
@@ -62,7 +47,7 @@ function ContactPage(props) {
           className="mt-[25px] contact-input"
         />
         <div className="mt-[5px] w-[400px] mx-auto">
-          <Button className="float-left" onClick={() => alert("sending mail")}>
+          <Button className="float-left" onClick={() => sendMail()}>
             Submit
           </Button>
         </div>

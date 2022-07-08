@@ -6,7 +6,7 @@
       "type": "npm",
       "script": "dev",
       "options": {
-        "cwd": "./client"
+        "cwd": "${workspaceFolder}/client"
       },
       "problemMatcher": []
     },
